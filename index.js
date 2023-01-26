@@ -13,7 +13,7 @@ const OAuth2_client = new OAuth2(process.env.CLIENT_ID,process.env.CLIENT_SECRET
 OAuth2_client.setCredentials({refresh_token:process.env.REFRESH_TOKEN});
 
 
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
