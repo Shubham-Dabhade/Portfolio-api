@@ -16,7 +16,7 @@ OAuth2_client.setCredentials({refresh_token:process.env.REFRESH_TOKEN});
 app.use(cors({credentials: true,crossorigin:"anonymous",allowedHeaders:"*",allowedOrigins:"*", origin: true}));
 app.use(express.json());
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
+app.listen(process.env.PORT || 5000, () => console.log("Server Running"));
 
 
 const send_mail=(name,email,phone,message,res)=>{
